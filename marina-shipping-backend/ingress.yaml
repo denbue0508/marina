@@ -1,21 +1,21 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: main-ingress
-  namespace: marina-admin
+  name: marina-shipping-backend-ingress
+  namespace: marina-shipping
   annotations:
     # Optional: common NGINX annotations (e.g., path rewriting)
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: nginx  # Specifies the Ingress Controller handling this resource
   rules:
-  - host: dev-marina-admin.cloudit.ph
+  - host: marina-shipping-backend.cloudit.ph
     http:
       paths:
       - path: /
         pathType: Prefix   # Can be Prefix, Exact, or ImplementationSpecific
         backend:
           service:
-            name: marina-admin-service
+            name: marina-shipping-backend-service
             port:
               number: 80
