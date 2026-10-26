@@ -16,7 +16,7 @@ spec:
         app: marina-shipping-admin
     spec:
       imagePullSecrets:
-        - name: nexus-creds
+        - name: nexus3-secret-marina-shipping-admin
       containers:
       - name: marina-shipping-admin
         image: nexus3.cloudit.ph:7777/marina-admin  # Recommended to use a specific version over 'latest'
