@@ -4,6 +4,7 @@ metadata:
   name: marina-indexer-seafarer-deployment
   labels:
     app: marina-indexer-seafarer
+  namespace: marina-seafarer
 spec:
   replicas: 3
   selector:
