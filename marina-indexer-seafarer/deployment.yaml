@@ -1,31 +1,28 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: marina-admin-deployment
+  name: marina-indexer-seafarer-deployment
   labels:
-    app: marina-admin
-  namespace: marina-admin
+    app: marina-indexer-seafarer
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: marina-admin
+      app: marina-indexer-seafarer
   template:
     metadata:
       labels:
-        app: marina-admin
+        app: marina-indexer-seafarer
     spec:
-      imagePullSecrets:
-        - name: nexus-creds
       containers:
-      - name: marina-admin
-        image: nexus3.cloudit.ph:7777/marina-admin  # Recommended to use a specific version over 'latest'
+      - name: marina-indexer-seafarer
+        image: nginx:1.25.0
         ports:
-        - containerPort: 30001
+        - containerPort: 80
         resources:
           limits:
             cpu: "500m"
-            memory: "256Mi"
+            memory: "512Mi"
           requests:
             cpu: "250m"
-            memory: "128Mi"
+            memory: "256Mi"
