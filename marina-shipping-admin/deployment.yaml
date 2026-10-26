@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: marina-shipping-admin-deployment
   labels:
-    app: marina-admin
+    app: marina-shipping-admin
   namespace: marina-shipping
 spec:
   replicas: 3
