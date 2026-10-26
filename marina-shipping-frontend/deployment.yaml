@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: marina-admin-deployment
+  name: marina-shipping-frontend-deployment
   labels:
-    app: marina-admin
-  namespace: marina-admin
+    app: marina-shipping-frontend
+  namespace: marina-shipping
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: marina-admin
+      app: marina-shipping-frontend
   template:
     metadata:
       labels:
-        app: marina-admin
+        app: marina-shipping-frontend
     spec:
       imagePullSecrets:
         - name: nexus-creds
       containers:
-      - name: marina-admin
-        image: nexus3.cloudit.ph:7777/marina-admin  # Recommended to use a specific version over 'latest'
+      - name: marina-shipping-frontend
+        image: nginx:1.25.0  # Recommended to use a specific version over 'latest'
         ports:
         - containerPort: 30001
         resources:
