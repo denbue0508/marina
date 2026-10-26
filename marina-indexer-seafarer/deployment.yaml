@@ -6,7 +6,7 @@ metadata:
     app: marina-indexer-seafarer
   namespace: marina-seafarer
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: marina-indexer-seafarer
