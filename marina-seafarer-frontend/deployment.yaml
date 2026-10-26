@@ -6,7 +6,7 @@ metadata:
     app: marina-seafarer-frontend
   namespace: marina-seafarer
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: marina-seafarer-frontend
